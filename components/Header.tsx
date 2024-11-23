@@ -67,6 +67,8 @@ function Header() {
           }}
         >
           Your Next Favorite Awaits!
+          <p>Click on any movie to view detailed information about it.</p>
+          Please wait if the site hangs; it will recover soon.
         </p>
       </div>
 
