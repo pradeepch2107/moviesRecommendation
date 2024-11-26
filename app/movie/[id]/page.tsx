@@ -39,60 +39,86 @@ async function MoviePage({
     )
     .toArray()) as SimilarMovie[];
 
-  similarMovies.shift(); // Optional: Remove the first movie if necessary
-
   return (
-    <div>
-      {/* Movie Details Section */}
-      <div className="flex flex-col md:flex-row items-center gap-y-10 p-10 pb-0">
-        <Image
-          src={movie.Poster}
-          alt={movie.Title}
-          width={300}
-          height={450}
-          className="shrink-0 rounded-lg"
-        />
-        <div className="px-2 md:px-10 flex flex-col gap-y-2">
-          <h1 className="text-6xl font-bold">{movie.Title}</h1>
-          <p className="text-gray-600 text-white">{movie.Genre}</p>
-          <p className="font-light">{movie.$vectorize}</p>
-          <div className="mt-auto grid grid-cols-2 text-white">
-            <div className="font-semibold text-white">
-              <p>Directed by</p>
-              <p>Box Office:</p>
-              <p>Released:</p>
-              <p>Runtime:</p>
-              <p>Rated:</p>
-              <p>IMDB Rating:</p>
-              <p>Language:</p>
-              <p>Country:</p>
-              <p>Featuring:</p>
-            </div>
-            <div>
-              <p>{movie.Director}</p>
-              <p>{movie.BoxOffice}</p>
-              <p>{movie.Released}</p>
-              <p>{movie.Runtime} min</p>
-              <p>{movie.Rated}</p>
-              <p>{movie.imdbRating}</p>
-              <p>{movie.Language}</p>
-              <p>{movie.Country}</p>
-              <p>{movie.Actors}</p>
+    <div className="min-h-screen bg-gray-900 text-white">
+      {/* Hero Section */}
+      <div
+  className="relative w-full h-[60vh] flex flex-col items-center justify-center text-center bg-gradient-to-r from-gray-800 via-gray-900 to-black bg-cover bg-center"
+  style={{ backgroundImage: `url('./images/popcorn.png)` }}
+>
+  <h1 className="text-6xl font-extrabold text-white">{movie.Title}</h1>
+  <p className="text-xl mt-4 text-gray-300">{movie.Genre}</p>
+  <p className="mt-2 text-gray-400 italic">{movie.$vector}</p>
+</div>
+
+
+      {/* Movie Details */}
+      <div className="max-w-6xl mx-auto p-6 bg-gray-800 rounded-lg shadow-lg -mt-16 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <Image
+              src={movie.Poster}
+              alt={movie.Title}
+              width={300}
+              height={450}
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Movie Details</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="font-semibold">Directed by</p>
+                <p>{movie.Director}</p>
+              </div>
+              <div>
+                <p className="font-semibold">Box Office</p>
+                <p>$ {movie.BoxOffice}</p>
+              </div>
+              <div>
+                <p className="font-semibold">Released</p>
+                <p>{movie.Released}</p>
+              </div>
+              <div>
+                <p className="font-semibold">Runtime</p>
+                <p>{movie.Runtime} min</p>
+              </div>
+              <div>
+                <p className="font-semibold">IMDB Rating</p>
+                <p>{movie.imdbRating}</p>
+              </div>
+              <div>
+                <p className="font-semibold">Language</p>
+                <p>{movie.Language}</p>
+              </div>
+              <div>
+                <p className="font-semibold">Country</p>
+                <p>{movie.Country}</p>
+              </div>
+              <div>
+                <p className="font-semibold">Actors</p>
+                <p>{movie.Actors}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Similar Movies Section */}
-      <div>
-        <h2 className="text-3xl pt-10 pl-10 font-bold">Similar Films You May Like</h2>
-        <div className="flex justify-between items-center lg:flex-row gap-x-20 gap-y-10 pl-20 pr-10 py-10 overflow-x-scroll">
+      <div className="max-w-6xl mx-auto p-6 mt-10">
+        <h2 className="text-3xl font-bold mb-6">Similar Films You May Like</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {similarMovies.length > 0 ? (
-            similarMovies.map((similarMovie, i) => (
-              <MoviePoster key={similarMovie._id} movie={similarMovie} />
+            similarMovies.map((similarMovie) => (
+              <div
+                key={similarMovie._id}
+                className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105"
+              >
+                <MoviePoster movie={similarMovie} />
+              </div>
             ))
           ) : (
-            <p className="text-center text-gray-500">No similar movies found.</p>
+            <p className="text-gray-500">No similar movies found.</p>
           )}
         </div>
       </div>
