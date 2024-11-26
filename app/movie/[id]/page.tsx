@@ -43,12 +43,11 @@ async function MoviePage({
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Hero Section */}
       <div
-  className="relative w-full h-[60vh] flex flex-col items-center justify-center text-center bg-gradient-to-r from-gray-800 via-gray-900 to-black bg-cover bg-center"
-  style={{ backgroundImage: `url('./images/popcorn.png)` }}
+  className="relative w-full h-[60vh] flex flex-col items-center justify-center text-lef bg-gradient-to-r from-gray-800 via-gray-900 to-black bg-cover bg-center"
+  style={{ backgroundImage: `url('https://media.istockphoto.com/id/1409923351/photo/popcorn-in-yellow-white-striped-bucket.jpg?s=2048x2048&w=is&k=20&c=KCA3RaFQTS5IgptNnYFBQ1CWBXIsOrb8j_-WskAqTb8=')`,backgroundPosition: 'center 40%' }}
 >
-  <h1 className="text-6xl font-extrabold text-white">{movie.Title}</h1>
-  <p className="text-xl mt-4 text-gray-300">{movie.Genre}</p>
-  <p className="mt-2 text-gray-400 italic">{movie.$vector}</p>
+<h1 className="text-6xl font-extrabold text-gray-800">{movie.Title}</h1>
+<p className="text-xl mt-4 text-gray-800">{movie.Genre}</p>
 </div>
 
 
@@ -65,38 +64,38 @@ async function MoviePage({
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-4">Movie Details</h2>
+            <h2 className="text-3xl font-bold mb-4 text-yellow-500">Movie Details</h2>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="font-semibold">Directed by</p>
+                <p className="font-semibold text-yellow-500">Directed by</p>
                 <p>{movie.Director}</p>
               </div>
               <div>
-                <p className="font-semibold">Box Office</p>
+                <p className="font-semibold text-yellow-500">Box Office</p>
                 <p>$ {movie.BoxOffice}</p>
               </div>
               <div>
-                <p className="font-semibold">Released</p>
+                <p className="font-semibold text-yellow-500">Released</p>
                 <p>{movie.Released}</p>
               </div>
               <div>
-                <p className="font-semibold">Runtime</p>
+                <p className="font-semibold text-yellow-500">Runtime</p>
                 <p>{movie.Runtime} min</p>
               </div>
               <div>
-                <p className="font-semibold">IMDB Rating</p>
+                <p className="font-semibold text-yellow-500">IMDB Rating</p>
                 <p>{movie.imdbRating}</p>
               </div>
               <div>
-                <p className="font-semibold">Language</p>
+                <p className="font-semibold text-yellow-500">Language</p>
                 <p>{movie.Language}</p>
               </div>
               <div>
-                <p className="font-semibold">Country</p>
+                <p className="font-semibold text-yellow-500">Country</p>
                 <p>{movie.Country}</p>
               </div>
               <div>
-                <p className="font-semibold">Actors</p>
+                <p className="font-semibold text-yellow-500">Actors</p>
                 <p>{movie.Actors}</p>
               </div>
             </div>
