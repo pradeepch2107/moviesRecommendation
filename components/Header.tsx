@@ -57,7 +57,7 @@ function Header() {
             </span>
           ))}
         </h1>
-        <p
+        <div
           className="mt-2 text-lg font-medium opacity-90"
           style={{
             color: "#FEE715",
@@ -66,10 +66,10 @@ function Header() {
               letterDelay).toFixed(2)}s`, // Starts after all letters are revealed
           }}
         >
-          Your Next Favorite Awaits!
+          <p>Your Next Favorite Awaits! 10,000+ movies</p>
           <p>Click on any movie to view detailed information about it.</p>
           <p>Please wait if the site hangs; it will recover soon.</p>
-        </p>
+        </div>
       </div>
 
       {/* Search Bar */}
