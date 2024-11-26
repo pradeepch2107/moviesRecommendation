@@ -40,7 +40,7 @@ async function MoviePage({
     .toArray()) as SimilarMovie[];
 
   // Log the similar movies for debugging
-  console.log("Similar Movies Array:", similarMovies);
+  //console.log("Similar Movies Array:", similarMovies);
 
   // Remove the first movie (same as the one being displayed)
   similarMovies.shift();
