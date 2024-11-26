@@ -44,7 +44,7 @@ async function MoviePage({
       {/* Hero Section */}
       <div
   className="relative w-full h-[60vh] flex flex-col items-center justify-center text-lef bg-gradient-to-r from-gray-800 via-gray-900 to-black bg-cover bg-center"
-  style={{ backgroundImage: `url('./images/popcorn.png')`,backgroundPosition: 'center 40%' }}
+  style={{ backgroundImage: `url('/images/popcorn.png')`,backgroundPosition: 'center 40%' }}
 >
 <h1 className="text-6xl font-extrabold text-gray-800">{movie.Title}</h1>
 <p className="text-xl mt-4 text-gray-800">{movie.Genre}</p>

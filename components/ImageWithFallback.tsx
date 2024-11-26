@@ -18,7 +18,7 @@ const ImageWithFallback = (props: {
       src={imgSrc}
       onError={() => {
         setImgSrc(
-          "./images/placeholder.jpeg"
+          "/images/placeholder.jpeg"
         );
       }}
     />
