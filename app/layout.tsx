@@ -14,30 +14,54 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-  <body
-    className="text-dark-charcoal max-w-7xl mx-auto"
-    style={{
-      background: "linear-gradient(to right, #FEE715 80%, #FEE715 80%)", // Adjust gradient proportions
-      color: "#101820", // Default text color
-    }}
-  >
-    <main
-      className="bg-dark-charcoal/90 shadow-2xl drop-shadow-2xl text-bright-yellow"
-      style={{
-        backgroundColor: "#101820", // Dark Charcoal background for main content
-        color: "#FEE715", // Bright Yellow text
-      }}
-    >
-      <Header />
-      {children}
-    </main>
-  </body>
-</html>
+      <body
+        className="relative overflow-y-auto text-dark-charcoal"
+        style={{
+          background:
+            "linear-gradient(to bottom, #101820 30%, #36454F 70%, #000000)", // Cinematic gradient
+          color: "#FEE715",
+        }}
+      >
+        {/* Animated Background Decorations */}
+        <div className="absolute inset-0 -z-10">
+          <div
+            className="w-[500px] h-[500px] rounded-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 opacity-20 blur-3xl absolute top-10 left-[-150px] animate-pulse"
+          ></div>
+          <div
+            className="w-[600px] h-[600px] rounded-full bg-gradient-to-br from-gray-600 via-gray-700 to-black opacity-20 blur-3xl absolute bottom-10 right-[-150px] animate-pulse delay-1500"
+          ></div>
+        </div>
 
+        {/* Main Wrapper */}
+        <div className="max-w-7xl mx-auto shadow-2xl rounded-xl bg-dark-charcoal/95 text-bright-yellow">
+          {/* Header */}
+          <Header />
+          {/* Main Content */}
+          <main
+            className="p-8 md:p-12 space-y-8"
+            style={{
+              background: "linear-gradient(to bottom, #101820, #1b1b1b)",
+              color: "#FEE715",
+              boxShadow: "0 10px 20px rgba(0, 0, 0, 0.7)", // Elevated look
+              borderRadius: "16px", // Modern rounded corners
+            }}
+          >
+            {/* Decorative Content Divider */}
+            <div
+              className="h-[4px] bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full mx-auto w-1/2"
+            ></div>
 
+            {/* Dynamic Content */}
+            {children}
 
-
-
-
+            {/* Footer Section */}
+            <footer className="text-center mt-8 text-sm text-gray-400">
+              <p>Powered by Movie Recommendation System</p>
+              <p>&copy; {new Date().getFullYear()} All rights reserved</p>
+            </footer>
+          </main>
+        </div>
+      </body>
+    </html>
   );
 }

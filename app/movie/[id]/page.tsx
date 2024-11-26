@@ -41,7 +41,7 @@ async function MoviePage({
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Hero Section */}
+      {}
       <div
   className="relative w-full h-[60vh] flex flex-col items-center justify-center text-lef bg-gradient-to-r from-gray-800 via-gray-900 to-black bg-cover bg-center"
   style={{ backgroundImage: `url('/images/popcorn.png')`,backgroundPosition: 'center 40%' }}
