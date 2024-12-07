@@ -12,8 +12,6 @@ export default async function Home() {
     .find(
       {},
       {
-        // this is how you exclude out the vector fields from the results
-        // projection: { $vector: 0 },
       }
     )
     .toArray()) as Movie[];

@@ -23,7 +23,7 @@ function SearchInput() {
     type="text"
     className="flex-1 p-3 text-gray-700 placeholder-gray-400 bg-transparent outline-none focus:ring-2 focus:ring-gray-400 focus:bg-white rounded-md"
     name="searchTerm"
-    placeholder="What type of film do you like? e.g. Sci-Fi films in space..."
+    placeholder="What genres of movies do you prefer? "
   />
   <button
     type="submit"
