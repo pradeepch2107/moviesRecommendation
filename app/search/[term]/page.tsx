@@ -28,8 +28,8 @@ async function SearchTerm({
 
   return (
     <div className="flex flex-col items-center justify-center p-20 pt-10">
-      <h1 className="mb-10 text-xl text-gray-100">
-        Suggested results based on your search
+      <h1 className="mb-10 text-2xl text-gray-100">
+      Movies similar to {term} you might enjoy. 
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">

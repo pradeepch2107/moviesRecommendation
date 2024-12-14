@@ -84,7 +84,7 @@ function Header() {
         <div className="relative z-10 mt-4">
           <SearchInput />
         </div>
-        <p className="text-sm mt-2 text-white-800">Click on any movie to view detailed information about it.</p>
+        <p className="text-2xl mt-2 text-white-800">Search for a movie to discover recommendations.</p>
       </div>
 
       {/* Decorative Footer Curve */}

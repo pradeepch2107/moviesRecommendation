@@ -27,17 +27,17 @@ async function MoviePage({
   // Fetch similar movies
   const similarMovies = (await movies
     .find(
-      {
-        _id: { $ne: movie._id },
-        Genre: { $in: movie.Genre.split(", ") },
-      },
+      {},
       {
         vector: movie.$vector,
-        limit: 12,
+        limit: 6, // we will cut the first movie and want to show 5 similar movies
         includeSimilarity: true,
       }
     )
     .toArray()) as SimilarMovie[];
+
+  // cut the first movie because it is the same as the movie we are looking for
+  similarMovies.shift();
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -105,7 +105,7 @@ async function MoviePage({
 
       {/* Similar Movies Section */}
       <div className="max-w-6xl mx-auto p-6 mt-10">
-        <h2 className="text-3xl font-bold mb-6">Similar Films You May Like</h2>
+        <h2 className="text-3xl font-bold mb-6">Trending Movies Right Now</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {similarMovies.length > 0 ? (
             similarMovies.map((similarMovie) => (
